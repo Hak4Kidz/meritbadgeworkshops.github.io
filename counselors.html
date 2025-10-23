@@ -15,14 +15,39 @@
 
     <header class="site-header">
       <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem;">
-        <a class="brand" href="./index.html" aria-label="NEIC Merit Badge Workshops home">
-          <span class="brand__logo" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.9">
-              <path d="M12 2L4 22h16L12 2Zm0 4.5 5.1 12.5H6.9L12 6.5Z" fill="#fff"/>
-            </svg>
-          </span>
-          <span class="brand__text">NEIC Merit Badge Workshops <span class="brand__sub">Counselors</span></span>
-        </a>
+        <div class="brand">
+          <a class="brand__logo-link" href="https://neic.org" target="_blank" rel="noopener" aria-label="Visit NEIC.org">
+            <span class="brand__logo" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.95">
+                <defs>
+                  <radialGradient id="g" cx="50%" cy="50%" r="60%">
+                    <stop offset="0%" stop-color="#fff8d6"/>
+                    <stop offset="70%" stop-color="#f0c541"/>
+                    <stop offset="100%" stop-color="#d9a521"/>
+                  </radialGradient>
+                </defs>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)"/>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)" transform="rotate(45 32 32)"/>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)" transform="rotate(90 32 32)"/>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)" transform="rotate(135 32 32)"/>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)" transform="rotate(180 32 32)"/>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)" transform="rotate(225 32 32)"/>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)" transform="rotate(270 32 32)"/>
+                <path d="M32 6 L36 32 L32 58 L28 32 Z" fill="url(#g)" transform="rotate(315 32 32)"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6" transform="rotate(22.5 32 32)"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6" transform="rotate(45 32 32)"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6" transform="rotate(67.5 32 32)"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6" transform="rotate(90 32 32)"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6" transform="rotate(112.5 32 32)"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6" transform="rotate(135 32 32)"/>
+                <path d="M32 12 L34 32 L32 52 L30 32 Z" fill="#fff4c6" transform="rotate(157.5 32 32)"/>
+                <circle cx="32" cy="32" r="8.5" fill="#b72d2d" stroke="#ffffff" stroke-width="2"/>
+              </svg>
+            </span>
+          </a>
+          <a class="brand__text" href="./index.html" aria-label="NEIC Merit Badge Workshops home">NEIC Merit Badge Workshops <span class="brand__sub">Counselors</span></a>
+        </div>
         <nav class="site-nav">
           <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-nav-toggle>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,10 +71,10 @@
       <div class="container stack-lg">
         <h1 class="section__title">Merit Badge Counselors</h1>
         <div class="card stack-md">
-          <p>Share your expertise and mentor Scouts by counseling a merit badge session. We'll provide guidance on BSA Youth Protection policies and help with prerequisites and class planning.</p>
+          <p>Share your expertise and mentor Scouts by counseling a merit badge session. We'll provide guidance on Scouting America Youth Protection policies and help with prerequisites and class planning.</p>
           <ul>
             <li>Confirm current Youth Protection Training</li>
-            <li>Be registered as a Merit Badge Counselor with BSA</li>
+            <li>Be registered as a Merit Badge Counselor with Scouting America</li>
             <li>Prepare a class plan aligning to official requirements</li>
           </ul>
         </div>
@@ -86,7 +111,7 @@
           <fieldset>
             <legend>Credentials</legend>
             <div class="three-col">
-              <label><input type="checkbox" name="credentials" value="registered"/> Registered MBC with BSA</label>
+              <label><input type="checkbox" name="credentials" value="registered"/> Registered MBC with Scouting America</label>
               <label><input type="checkbox" name="credentials" value="ypt"/> Current YPT</label>
               <label><input type="checkbox" name="credentials" value="co-instructor"/> Open to co‑instructing</label>
             </div>
