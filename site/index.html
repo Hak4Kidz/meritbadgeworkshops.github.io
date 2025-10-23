@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Northeast Illinois Council — Merit Badge Workshops</title>
+    <meta name="description" content="Mobile-first site for Northeast Illinois Council Merit Badge Workshops: registration, classes, volunteers, counselors, and parent info.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+        <a class="brand" href="./index.html" aria-label="NEIC Merit Badge Workshops home">
+          <span class="brand__logo" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.9">
+              <path d="M12 2L4 22h16L12 2Zm0 4.5 5.1 12.5H6.9L12 6.5Z" fill="#fff"/>
+            </svg>
+          </span>
+          <span class="brand__text">NEIC Merit Badge Workshops <span class="brand__sub">Northeast Illinois Council</span></span>
+        </a>
+        <nav class="site-nav">
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-nav-toggle>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div id="site-menu" class="nav-panel" data-nav-panel>
+            <ul class="nav-links">
+              <li><a href="registration.html">Registration</a></li>
+              <li><a href="classes.html">Classes</a></li>
+              <li><a href="volunteer.html">Volunteer</a></li>
+              <li><a href="counselors.html">Counselors</a></li>
+              <li><a href="parents.html">Parents</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <span class="eyebrow">Northeast Illinois Council</span>
+            <h1>Merit Badge Workshops</h1>
+            <p>Hands-on, counselor-led classes that help Scouts explore skills, advance in rank, and connect with the community — optimized for mobile and easy to navigate.</p>
+            <div class="stack-sm">
+              <a class="btn" href="registration.html">Register now</a>
+              <a class="btn btn--outline" href="classes.html">Explore classes</a>
+            </div>
+          </div>
+          <div>
+            <div class="hero-card stack-sm">
+              <div class="hero-card__title">Next Workshop</div>
+              <div class="hero-card__meta">Date TBD • Location TBD</div>
+              <p class="help">Finalized details and class catalog will be posted here. Check back soon or volunteer to help make it happen!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section__title">Everything you need</h2>
+          <div class="grid grid--cards">
+            <div class="card">
+              <h3>Registration</h3>
+              <p>Secure your spot in upcoming workshop sessions. Simple, mobile-friendly form.</p>
+              <p class="stack-sm"><a class="btn btn--outline" href="registration.html">Go to Registration</a></p>
+            </div>
+            <div class="card">
+              <h3>Classes</h3>
+              <p>Browse the catalog and pick your merit badges. Updated as counselors confirm.</p>
+              <p class="stack-sm"><a class="btn btn--outline" href="classes.html">View Classes</a></p>
+            </div>
+            <div class="card">
+              <h3>Volunteer</h3>
+              <p>Pitch in with check‑in, logistics, safety, or tech. No experience required.</p>
+              <p class="stack-sm"><a class="btn btn--outline" href="volunteer.html">Volunteer</a></p>
+            </div>
+            <div class="card">
+              <h3>Merit Badge Counselors</h3>
+              <p>Teach a badge, mentor Scouts, and share your expertise. Apply to counsel.</p>
+              <p class="stack-sm"><a class="btn btn--outline" href="counselors.html">For Counselors</a></p>
+            </div>
+            <div class="card">
+              <h3>Parent Information</h3>
+              <p>What to bring, schedules, parking, and policies — all in one place.</p>
+              <p class="stack-sm"><a class="btn btn--outline" href="parents.html">Parent Info</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>Questions? Email <a href="mailto:mbw@neic.org">mbw@neic.org</a></div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js" defer></script>
+  </body>
+</html>

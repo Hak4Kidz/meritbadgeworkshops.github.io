@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Classes — NEIC Merit Badge Workshops</title>
+    <meta name="description" content="Browse the NEIC Merit Badge Workshops class catalog and schedule.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+        <a class="brand" href="./index.html" aria-label="NEIC Merit Badge Workshops home">
+          <span class="brand__logo" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.9">
+              <path d="M12 2L4 22h16L12 2Zm0 4.5 5.1 12.5H6.9L12 6.5Z" fill="#fff"/>
+            </svg>
+          </span>
+          <span class="brand__text">NEIC Merit Badge Workshops <span class="brand__sub">Classes</span></span>
+        </a>
+        <nav class="site-nav">
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-nav-toggle>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div id="site-menu" class="nav-panel" data-nav-panel>
+            <ul class="nav-links">
+              <li><a href="registration.html">Registration</a></li>
+              <li><a href="classes.html" aria-current="page">Classes</a></li>
+              <li><a href="volunteer.html">Volunteer</a></li>
+              <li><a href="counselors.html">Counselors</a></li>
+              <li><a href="parents.html">Parents</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section">
+      <div class="container stack-lg">
+        <h1 class="section__title">Class Catalog</h1>
+        <p class="help">This page can embed your live catalog from a spreadsheet, Airtable, or custom app. For now, here's a placeholder structure and sample content.</p>
+
+        <div class="card stack-md">
+          <div class="two-col">
+            <div class="field">
+              <label for="search">Search classes</label>
+              <input id="search" type="text" placeholder="Start typing…" />
+            </div>
+            <div class="field">
+              <label for="filters">Filter</label>
+              <select id="filters">
+                <option value="all">All</option>
+                <option value="eagle">Eagle-required</option>
+                <option value="stem">STEM</option>
+                <option value="outdoor">Outdoor</option>
+              </select>
+            </div>
+          </div>
+          <div class="help">Connect this UI to your catalog data source for live filtering.</div>
+        </div>
+
+        <div class="card">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Badge</th>
+                <th>Counselor</th>
+                <th>Time</th>
+                <th>Seats</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>First Aid</td>
+                <td>J. Smith</td>
+                <td>9:00a–12:00p</td>
+                <td>12</td>
+                <td><a class="btn btn--outline" href="registration.html">Register</a></td>
+              </tr>
+              <tr>
+                <td>Citizenship in Society</td>
+                <td>A. Johnson</td>
+                <td>1:00p–4:00p</td>
+                <td>10</td>
+                <td><a class="btn btn--outline" href="registration.html">Register</a></td>
+              </tr>
+              <tr>
+                <td>Programming</td>
+                <td>M. Lee</td>
+                <td>9:00a–12:00p</td>
+                <td>8</td>
+                <td><a class="btn btn--outline" href="registration.html">Register</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <a class="btn" href="registration.html">Proceed to Registration</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>Looking to add a class? See <a href="counselors.html">Counselors</a>.</div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js" defer></script>
+  </body>
+</html>
