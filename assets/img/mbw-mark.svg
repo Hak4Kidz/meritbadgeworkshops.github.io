@@ -3,8 +3,8 @@
   <title>MBW</title>
   <defs>
     <style>
-      .ink { fill: #123c64; stroke: #123c64; }
-      .stroke { fill: none; stroke: #123c64; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+      .ink { fill: #ffffff; stroke: #ffffff; }
+      .stroke { fill: none; stroke: #ffffff; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     </style>
   </defs>
 
