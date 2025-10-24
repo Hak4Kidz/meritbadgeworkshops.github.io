@@ -103,9 +103,13 @@ svg { display: block; }
 .brand__logo-link { line-height: 0; }
 .brand__logo {
   width: 36px; height: 36px;
-  background: radial-gradient(120% 120% at 30% 30%, #1e6f5c 0%, #0b3d2e 60%);
+  background: #f6f3ea; /* light cream tile for contrast with navy logo */
   border-radius: 10px; box-shadow: var(--shadow-1);
   display: grid; place-items: center;
+  overflow: hidden;
+}
+.brand__logo img, .brand__logo svg {
+  width: 26px; height: 26px; display: block;
 }
 .brand__text { font-weight: 800; letter-spacing: .2px; color: inherit; text-decoration: none; }
 .brand__sub { display: block; font-weight: 600; color: var(--color-muted); font-size: .78rem; margin-top: -2px; }
