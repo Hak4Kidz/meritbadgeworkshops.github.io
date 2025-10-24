@@ -35,19 +35,44 @@ a { color: #f7faf8; text-decoration-color: rgba(255,255,255,.6); text-underline-
 a:visited { color: #f7faf8; }
 a:hover { color: #ffffff; }
 
-/* Subtle warm animated overlay to make background warmer/active */
+/* Enhanced warm animated background overlays */
 body::before {
   content: "";
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(700px 220px at 15% -10%, rgba(255,136,64,.12), transparent 70%),
-    radial-gradient(600px 200px at 85% -15%, rgba(240,197,65,.12), transparent 70%),
-    radial-gradient(900px 260px at 50% 120%, rgba(30,111,92,.10), transparent 70%);
-  animation: bgFloat 24s ease-in-out infinite alternate;
+    /* warmer ambers near top corners */
+    radial-gradient(800px 260px at 12% -8%, rgba(255,150,90,.18), transparent 72%),
+    radial-gradient(720px 240px at 88% -12%, rgba(240,197,65,.18), transparent 72%),
+    /* subtle burnt orange glow lower center */
+    radial-gradient(1000px 300px at 50% 115%, rgba(194,84,0,.10), transparent 70%),
+    /* deep teal wash to keep brand base */
+    radial-gradient(1200px 320px at 40% 130%, rgba(30,111,92,.12), transparent 72%);
+  animation: bgFloat 30s ease-in-out infinite alternate;
+  will-change: transform, filter;
 }
 @keyframes bgFloat {
-  0% { transform: translateY(0) scale(1); filter: saturate(1.0); }
-  100% { transform: translateY(18px) scale(1.02); filter: saturate(1.05); }
+  0% { transform: translate3d(0, 0, 0) scale(1); filter: saturate(1.0); }
+  100% { transform: translate3d(0, 26px, 0) scale(1.03); filter: saturate(1.08); }
+}
+
+/* Secondary drifting layer for more depth and activity */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(900px 280px at 85% 120%, rgba(255,184,108,.10), transparent 70%),
+    radial-gradient(700px 240px at 15% 110%, rgba(240,197,65,.08), transparent 70%);
+  animation: bgFloat2 46s ease-in-out infinite alternate-reverse;
+  will-change: transform, filter;
+}
+@keyframes bgFloat2 {
+  0% { transform: translate3d(0, 0, 0) scale(1.01); filter: saturate(1.0); }
+  100% { transform: translate3d(-18px, -20px, 0) scale(1.025); filter: saturate(1.06); }
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; transform: none; filter: none; }
 }
 img { max-width: 100%; display: block; }
 svg { display: block; }
