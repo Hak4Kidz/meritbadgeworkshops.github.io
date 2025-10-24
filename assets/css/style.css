@@ -30,6 +30,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Global link styles: bright white, no blue/purple visited */
+a { color: #f7faf8; text-decoration-color: rgba(255,255,255,.6); text-underline-offset: 2px; }
+a:visited { color: #f7faf8; }
+a:hover { color: #ffffff; }
+
+/* Subtle warm animated overlay to make background warmer/active */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(700px 220px at 15% -10%, rgba(255,136,64,.12), transparent 70%),
+    radial-gradient(600px 200px at 85% -15%, rgba(240,197,65,.12), transparent 70%),
+    radial-gradient(900px 260px at 50% 120%, rgba(30,111,92,.10), transparent 70%);
+  animation: bgFloat 24s ease-in-out infinite alternate;
+}
+@keyframes bgFloat {
+  0% { transform: translateY(0) scale(1); filter: saturate(1.0); }
+  100% { transform: translateY(18px) scale(1.02); filter: saturate(1.05); }
+}
 img { max-width: 100%; display: block; }
 svg { display: block; }
 
@@ -139,7 +158,14 @@ svg { display: block; }
 .btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1rem; border-radius: 12px; font-weight: 700; color: #16241e; background: var(--color-accent); box-shadow: 0 6px 14px rgba(240,197,65,.28), inset 0 1px 0 rgba(255,255,255,.3); }
 .btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
-.btn--outline { background: transparent; color: var(--color-text); border: 1px solid rgba(255,255,255,.18); box-shadow: none; }
+/* Outline buttons become filled secondary buttons for better visibility */
+.btn--outline {
+  background: color-mix(in oklab, var(--color-primary) 82%, black 12%);
+  color: var(--color-text);
+  border: 0;
+  box-shadow: 0 6px 14px rgba(30,111,92,.28), inset 0 1px 0 rgba(255,255,255,.22);
+}
+
 
 /* Forms */
 .form { display: grid; gap: 1rem; }
@@ -163,7 +189,7 @@ legend { padding: 0 .5rem; color: var(--color-muted); }
 
 /* Footer */
 .site-footer { padding: 2rem 0; border-top: 1px solid rgba(255,255,255,.08); color: var(--color-muted); font-size: .95rem; }
-.site-footer a { color: #fff4c6; }
+.site-footer a { color: #f7faf8; }
 
 /* Utility */
 .stack-sm > * + * { margin-top: .5rem; }
