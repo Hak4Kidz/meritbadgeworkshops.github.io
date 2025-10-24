@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="badge" width="200" height="200" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <circle cx="100" cy="100" r="88" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+      <circle cx="100" cy="100" r="64" fill="rgba(240,197,65,0.06)"/>
+      <path d="M100 30 L108 96 L100 170 L92 96 Z" fill="rgba(240,197,65,0.28)"/>
+      <circle cx="100" cy="100" r="14" fill="rgba(183,45,45,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b3d2e" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0b3d2e" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#0b3d2e"/>
+  <rect width="100%" height="100%" fill="url(#badge)"/>
+  <rect width="100%" height="100%" fill="url(#fade)"/>
+</svg>
