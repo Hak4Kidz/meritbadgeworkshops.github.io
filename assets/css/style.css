@@ -186,6 +186,19 @@ svg { display: block; }
 .card h3 { margin: 0 0 .5rem; font-size: 1.1rem; }
 .card p { margin: 0; color: var(--color-muted); }
 
+/* MBW logo tile used in body content */
+.logo-tile {
+  display: inline-grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  background: #f6f3ea; /* cream tile for navy mark */
+  border-radius: 16px;
+  box-shadow: var(--shadow-1);
+  margin: 0 0 .75rem 0;
+}
+.logo-tile img, .logo-tile svg { width: 44px; height: 44px; }
+
 /* Buttons */
 .btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1rem; border-radius: 12px; font-weight: 700; color: #16241e; background: var(--color-accent); box-shadow: 0 6px 14px rgba(240,197,65,.28), inset 0 1px 0 rgba(255,255,255,.3); }
 .btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
