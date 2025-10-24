@@ -110,6 +110,9 @@ svg { display: block; }
 .brand__text { font-weight: 800; letter-spacing: .2px; color: inherit; text-decoration: none; }
 .brand__sub { display: block; font-weight: 600; color: var(--color-muted); font-size: .78rem; margin-top: -2px; }
 
+/* Ensure the page name stacks below the site name */
+.brand .brand__text { display: inline-flex; flex-direction: column; line-height: 1.05; }
+
 .site-nav { position: relative; }
 .nav-toggle {
   -webkit-tap-highlight-color: transparent;
