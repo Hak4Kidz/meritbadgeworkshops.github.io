@@ -115,7 +115,7 @@ svg { display: block; }
 .brand__sub { display: block; font-weight: 600; color: var(--color-muted); font-size: .78rem; margin-top: -2px; }
 
 /* Ensure the page name stacks below the site name */
-.brand .brand__text { display: inline-flex; flex-direction: column; line-height: 1.05; }
+.brand .brand__text { display: block; line-height: 1.05; }
 
 .site-nav { position: relative; }
 .nav-toggle {
