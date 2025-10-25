@@ -1,12 +1,12 @@
 /* NEIC Merit Badge Workshops - Mobile-first theme */
 :root {
-  --color-bg: #0b3d2e;           /* deep forest */
-  --color-surface: #113d2c;      /* forest shade */
-  --color-primary: #1e6f5c;      /* fern */
-  --color-accent: #f0c541;       /* scout gold */
+  --color-bg: #F3ECD4;           /* light khaki */
+  --color-surface: #FFFFFF;      /* light surface */
+  --color-primary: #003F87;      /* Scouting America blue */
+  --color-accent: #003F87;       /* Scouting America blue */
   --color-danger: #c25400;       /* burnt orange */
-  --color-text: #f3f7f5;         /* near-white */
-  --color-muted: #b7c8be;        /* desaturated green-gray */
+  --color-text: #1B1B1B;         /* near-black */
+  --color-muted: #4B5563;        /* slate gray */
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -30,23 +30,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Global link styles: bright white, no blue/purple visited */
-a { color: #f7faf8; text-decoration-color: rgba(255,255,255,.6); text-underline-offset: 2px; }
-a:visited { color: #f7faf8; }
-a:hover { color: #ffffff; }
+/* Global link styles tuned for light theme */
+a { color: var(--color-primary); text-decoration-color: color-mix(in oklab, var(--color-primary) 40%, transparent); text-underline-offset: 2px; }
+a:visited { color: color-mix(in oklab, var(--color-primary) 86%, black 14%); }
+a:hover { color: color-mix(in oklab, var(--color-primary) 92%, black 8%); }
 
 /* Enhanced warm animated background overlays */
 body::before {
   content: "";
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    /* warmer ambers near top corners */
-    radial-gradient(800px 260px at 12% -8%, rgba(255,150,90,.18), transparent 72%),
-    radial-gradient(720px 240px at 88% -12%, rgba(240,197,65,.18), transparent 72%),
-    /* subtle burnt orange glow lower center */
-    radial-gradient(1000px 300px at 50% 115%, rgba(194,84,0,.10), transparent 70%),
-    /* deep teal wash to keep brand base */
-    radial-gradient(1200px 320px at 40% 130%, rgba(30,111,92,.12), transparent 72%);
+    /* soft blue accents near top corners */
+    radial-gradient(820px 260px at 12% -8%, rgba(0,63,135,.10), transparent 72%),
+    radial-gradient(720px 240px at 88% -12%, rgba(0,63,135,.06), transparent 72%),
+    /* warm khaki wash lower center */
+    radial-gradient(1100px 320px at 40% 130%, rgba(200,170,110,.10), transparent 70%);
   animation: bgFloat 30s ease-in-out infinite alternate;
   will-change: transform, filter;
 }
@@ -60,8 +58,8 @@ body::after {
   content: "";
   position: fixed; inset: 0; z-index: -2; pointer-events: none;
   background:
-    radial-gradient(900px 280px at 85% 120%, rgba(255,184,108,.10), transparent 70%),
-    radial-gradient(700px 240px at 15% 110%, rgba(240,197,65,.08), transparent 70%);
+    radial-gradient(900px 280px at 85% 120%, rgba(0,63,135,.08), transparent 70%),
+    radial-gradient(700px 240px at 15% 110%, rgba(0,63,135,.04), transparent 70%);
   animation: bgFloat2 46s ease-in-out infinite alternate-reverse;
   will-change: transform, filter;
 }
@@ -85,7 +83,7 @@ svg { display: block; }
 }
 .skip-link:focus {
   left: 1rem; top: 1rem; z-index: 1000;
-  background: var(--color-accent); color: #1b1b1b;
+  background: var(--color-accent); color: #ffffff;
   padding: .5rem .75rem; border-radius: var(--radius-sm);
 }
 
@@ -93,8 +91,8 @@ svg { display: block; }
 .site-header {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(8px);
-  background: linear-gradient(180deg, rgba(11,61,46,.9), rgba(11,61,46,.7));
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 .brand {
   display: flex; align-items: center; gap: .65rem; padding: .8rem 0;
@@ -103,7 +101,7 @@ svg { display: block; }
 .brand__logo-link { line-height: 0; }
 .brand__logo {
   width: 36px; height: 36px;
-  background: #f6f3ea; /* light cream tile for contrast with navy logo */
+  background: #ffffff; /* light tile for contrast */
   border-radius: 10px; box-shadow: var(--shadow-1);
   display: grid; place-items: center;
   overflow: hidden;
@@ -123,13 +121,13 @@ svg { display: block; }
   appearance: none; border: 0; background: transparent; color: var(--color-text);
   width: 44px; height: 44px; display: grid; place-items: center; border-radius: 10px;
 }
-.nav-toggle:hover { background: rgba(255,255,255,.06); }
+.nav-toggle:hover { background: rgba(0,63,135,.08); }
 
 .nav-panel {
   display: none;
   position: absolute; right: 0; top: calc(100% + 8px);
   background: var(--color-surface);
-  border: 1px solid rgba(255,255,255,.06);
+  border: 1px solid rgba(0,0,0,.08);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-2);
   min-width: 240px;
@@ -139,8 +137,8 @@ svg { display: block; }
 .nav-links a {
   display: block; padding: .75rem .9rem; border-radius: 10px; color: var(--color-text); text-decoration: none;
 }
-.nav-links a:hover { background: rgba(255,255,255,.06); }
-.nav-links a[aria-current="page"] { background: rgba(240,197,65,.18); color: #fff4c6; }
+.nav-links a:hover { background: rgba(0,63,135,.08); }
+.nav-links a[aria-current="page"] { background: rgba(0,63,135,.12); color: var(--color-primary); }
 
 /* Desktop nav */
 @media (min-width: 860px) {
@@ -155,9 +153,9 @@ svg { display: block; }
   position: relative; isolation: isolate;
   padding: clamp(3rem, 6vw, 5rem) 0;
   background:
-    radial-gradient(1200px 200px at 10% -10%, rgba(240,197,65,.15), transparent 70%),
-    radial-gradient(800px 200px at 90% -15%, rgba(30,111,92,.33), transparent 70%),
-    linear-gradient(180deg, rgba(17,61,44,.9), rgba(11,61,46,0) 65%);
+    radial-gradient(1200px 200px at 10% -10%, rgba(0,63,135,.10), transparent 70%),
+    radial-gradient(800px 200px at 90% -15%, rgba(0,63,135,.06), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0) 65%);
 }
 .hero--photo::before {
   content: "";
@@ -171,7 +169,7 @@ svg { display: block; }
 }
 .hero h1 { font-family: Montserrat, Inter, system-ui, sans-serif; font-size: clamp(1.8rem, 4.6vw, 3.2rem); line-height: 1.1; margin: 0 0 .75rem; }
 .hero p { margin: 0 0 1.25rem; color: var(--color-muted); font-size: clamp(1rem, 2.6vw, 1.1rem); }
-.eyebrow { display: inline-block; font-weight: 800; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: #fff4c6; background: rgba(240,197,65,.18); padding: .25rem .5rem; border-radius: 999px; margin-bottom: .75rem; }
+.eyebrow { display: inline-block; font-weight: 800; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--color-primary); background: rgba(0,63,135,.10); padding: .25rem .5rem; border-radius: 999px; margin-bottom: .75rem; }
 
 /* Prominent MBW logo aligned with title */
 .hero-title {
@@ -190,7 +188,7 @@ svg { display: block; }
   box-shadow: none;
 }
 
-.hero-card { background: color-mix(in oklab, var(--color-surface) 92%, black 8%); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius-lg); padding: 1rem; box-shadow: var(--shadow-1); }
+.hero-card { background: color-mix(in oklab, var(--color-surface) 96%, black 4%); border: 1px solid rgba(0,0,0,.08); border-radius: var(--radius-lg); padding: 1rem; box-shadow: var(--shadow-1); }
 .hero-card__title { font-weight: 700; margin: 0 0 .25rem; }
 .hero-card__meta { color: var(--color-muted); font-size: .95rem; }
 
@@ -199,7 +197,7 @@ svg { display: block; }
 .section__title { font-family: Montserrat, Inter, system-ui, sans-serif; font-size: clamp(1.25rem, 3.2vw, 1.8rem); margin: 0 0 1rem; }
 .grid { display: grid; gap: 1rem; }
 .grid--cards { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-.card { background: color-mix(in oklab, var(--color-surface) 90%, black 10%); border: 1px solid rgba(255,255,255,.07); border-radius: var(--radius-md); padding: 1rem; box-shadow: var(--shadow-1); }
+.card { background: color-mix(in oklab, var(--color-surface) 96%, black 4%); border: 1px solid rgba(0,0,0,.08); border-radius: var(--radius-md); padding: 1rem; box-shadow: var(--shadow-1); }
 .card h3 { margin: 0 0 .5rem; font-size: 1.1rem; }
 .card p { margin: 0; color: var(--color-muted); }
 
@@ -218,15 +216,15 @@ svg { display: block; }
 .logo-tile img, .logo-tile svg { width: 44px; height: 44px; }
 
 /* Buttons */
-.btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1rem; border-radius: 12px; font-weight: 700; color: #16241e; background: var(--color-accent); box-shadow: 0 6px 14px rgba(240,197,65,.28), inset 0 1px 0 rgba(255,255,255,.3); }
+.btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1rem; border-radius: 12px; font-weight: 700; color: #ffffff; background: var(--color-accent); box-shadow: 0 6px 14px rgba(0,63,135,.25), inset 0 1px 0 rgba(255,255,255,.3); }
 .btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 /* Outline buttons become filled secondary buttons for better visibility */
 .btn--outline {
   background: color-mix(in oklab, var(--color-primary) 82%, black 12%);
-  color: var(--color-text);
+  color: #ffffff;
   border: 0;
-  box-shadow: 0 6px 14px rgba(30,111,92,.28), inset 0 1px 0 rgba(255,255,255,.22);
+  box-shadow: 0 6px 14px rgba(0,63,135,.22), inset 0 1px 0 rgba(255,255,255,.22);
 }
 
 
@@ -235,13 +233,13 @@ svg { display: block; }
 .field { display: grid; gap: .35rem; }
 label { font-weight: 600; }
 input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
-  width: 100%; padding: .7rem .75rem; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
-  background: color-mix(in oklab, var(--color-surface) 88%, black 12%);
+  width: 100%; padding: .7rem .75rem; border-radius: 12px; border: 1px solid rgba(0,0,0,.12);
+  background: color-mix(in oklab, var(--color-surface) 96%, black 4%);
   color: var(--color-text);
 }
-input::placeholder, textarea::placeholder { color: #a9b9b1; }
+input::placeholder, textarea::placeholder { color: #6b7280; }
 textarea { min-height: 140px; }
-fieldset { border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: .75rem; }
+fieldset { border: 1px solid rgba(0,0,0,.12); border-radius: 14px; padding: .75rem; }
 legend { padding: 0 .5rem; color: var(--color-muted); }
 .help { color: var(--color-muted); font-size: .92rem; }
 
@@ -251,8 +249,8 @@ legend { padding: 0 .5rem; color: var(--color-muted); }
 .faq summary { cursor: pointer; font-weight: 700; }
 
 /* Footer */
-.site-footer { padding: 2rem 0; border-top: 1px solid rgba(255,255,255,.08); color: var(--color-muted); font-size: .95rem; }
-.site-footer a { color: #f7faf8; }
+.site-footer { padding: 2rem 0; border-top: 1px solid rgba(0,0,0,.08); color: var(--color-muted); font-size: .95rem; }
+.site-footer a { color: var(--color-primary); }
 
 /* Utility */
 .stack-sm > * + * { margin-top: .5rem; }
@@ -261,8 +259,8 @@ legend { padding: 0 .5rem; color: var(--color-muted); }
 
 /* Tables (for catalog placeholders) */
 .table { width: 100%; border-collapse: collapse; }
-.table th, .table td { padding: .6rem .5rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; }
-.table thead th { color: #fff4c6; font-weight: 700; }
+.table th, .table td { padding: .6rem .5rem; border-bottom: 1px solid rgba(0,0,0,.08); text-align: left; }
+.table thead th { color: var(--color-primary); font-weight: 700; }
 
 /* Responsive helpers */
 @media (min-width: 640px) { .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; } }
