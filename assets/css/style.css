@@ -4,6 +4,7 @@
   --color-surface: #FFFFFF;      /* light surface */
   --color-primary: #003F87;      /* Scouting America blue */
   --color-accent: #003F87;       /* Scouting America blue */
+  --color-cta: #F2B100;          /* golden yellow for CTA */
   --color-danger: #c25400;       /* burnt orange */
   --color-text: #1B1B1B;         /* near-black */
   --color-muted: #4B5563;        /* slate gray */
@@ -238,6 +239,7 @@ svg { display: block; }
 .btn:hover {
   transform: translateY(-1px);
   background: color-mix(in oklab, var(--color-accent) 74%, black 26%);
+  color: #ffffff;
 }
 .btn:active { transform: translateY(0); }
 /* Strong, visible keyboard focus without reducing text contrast */
@@ -245,6 +247,8 @@ svg { display: block; }
   outline: 3px solid color-mix(in oklab, var(--color-primary) 65%, black 35%);
   outline-offset: 2px;
 }
+/* Ensure visited links don't turn button text blue */
+.btn:visited { color: #ffffff; }
 /* Outline buttons become filled secondary buttons for better visibility */
 .btn--outline {
   background: color-mix(in oklab, var(--color-primary) 78%, black 22%);
@@ -252,6 +256,19 @@ svg { display: block; }
   border: 0;
   box-shadow: 0 6px 14px rgba(0,63,135,.22), inset 0 1px 0 rgba(255,255,255,.18);
 }
+.btn--outline:visited { color: #ffffff; }
+
+/* CTA variant: yellow button with dark text */
+.btn--cta {
+  background: color-mix(in oklab, var(--color-cta) 86%, black 14%);
+  color: #1B1B1B;
+  box-shadow: 0 6px 14px rgba(230,170,0,.25), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.btn--cta:hover {
+  background: color-mix(in oklab, var(--color-cta) 76%, black 24%);
+  color: #1B1B1B;
+}
+.btn--cta:visited { color: #1B1B1B; }
 
 
 /* Forms */
