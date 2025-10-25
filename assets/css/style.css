@@ -122,6 +122,8 @@ svg { display: block; }
   width: 44px; height: 44px; display: grid; place-items: center; border-radius: 10px;
 }
 .nav-toggle:hover { background: rgba(0,63,135,.08); }
+/* Ensure hamburger icon uses high-contrast stroke */
+.nav-toggle svg path { stroke: currentColor; }
 
 .nav-panel {
   display: none;
@@ -216,15 +218,39 @@ svg { display: block; }
 .logo-tile img, .logo-tile svg { width: 44px; height: 44px; }
 
 /* Buttons */
-.btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1rem; border-radius: 12px; font-weight: 700; color: #ffffff; background: var(--color-accent); box-shadow: 0 6px 14px rgba(0,63,135,.25), inset 0 1px 0 rgba(255,255,255,.3); }
-.btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+/* Darken button backgrounds to improve text contrast across themes */
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: color-mix(in oklab, var(--color-accent) 82%, black 18%);
+  box-shadow: 0 6px 14px rgba(0,63,135,.25), inset 0 1px 0 rgba(255,255,255,.25);
+}
+/* Darken on hover to maintain/increase contrast with white text */
+.btn:hover {
+  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--color-accent) 74%, black 26%);
+}
 .btn:active { transform: translateY(0); }
+/* Strong, visible keyboard focus without reducing text contrast */
+.btn:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--color-primary) 65%, black 35%);
+  outline-offset: 2px;
+}
 /* Outline buttons become filled secondary buttons for better visibility */
 .btn--outline {
-  background: color-mix(in oklab, var(--color-primary) 82%, black 12%);
+  background: color-mix(in oklab, var(--color-primary) 78%, black 22%);
   color: #ffffff;
   border: 0;
-  box-shadow: 0 6px 14px rgba(0,63,135,.22), inset 0 1px 0 rgba(255,255,255,.22);
+  box-shadow: 0 6px 14px rgba(0,63,135,.22), inset 0 1px 0 rgba(255,255,255,.18);
 }
 
 
