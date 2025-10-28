@@ -41,11 +41,16 @@ body::before {
   content: "";
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
+    /* primary background photo (new graphic) */
+    url('../img/merit-badges-bg.jpg') center/cover no-repeat,
+    /* fallback to previous vector if the photo is unavailable */
+    url('../img/scouting-merit-badges.svg') center/cover no-repeat,
     /* soft blue accents near top corners */
     radial-gradient(820px 260px at 12% -8%, rgba(0,63,135,.10), transparent 72%),
     radial-gradient(720px 240px at 88% -12%, rgba(0,63,135,.06), transparent 72%),
     /* warm khaki wash lower center */
     radial-gradient(1100px 320px at 40% 130%, rgba(200,170,110,.10), transparent 70%);
+  opacity: .2; /* keep photo subtle behind content */
   animation: bgFloat 30s ease-in-out infinite alternate;
   will-change: transform, filter;
 }
@@ -160,12 +165,8 @@ svg { display: block; }
     radial-gradient(800px 200px at 90% -15%, rgba(0,63,135,.06), transparent 70%),
     linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0) 65%);
 }
-.hero--photo::before {
-  content: "";
-  position: absolute; inset: 0; z-index: -1;
-  background: url('../img/scouting-merit-badges.svg') center/cover no-repeat;
-  opacity: .22; filter: saturate(1.05) contrast(1.05);
-}
+/* Use global body background image instead; disable hero-specific layer */
+.hero--photo::before { content: none; }
 .hero__grid { display: grid; gap: 1.5rem; align-items: center; }
 @media (min-width: 860px) {
   .hero__grid { grid-template-columns: 1.15fr .85fr; }
